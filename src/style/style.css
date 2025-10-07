@@ -1,0 +1,456 @@
+/* universal style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    color: #b0b0b0;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menubar {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+    position: absolute;
+    right: 40px;
+}
+
+.menubar span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #f9f9f9;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #f9f9f9;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #197bb0;
+}
+
+
+@media (max-width: 768px) {
+    .menubar {
+        display: flex;
+    }
+
+    .nav-links-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #121720;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links-container.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+    }
+
+    .menubar.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menubar.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menubar.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* index.html body styling */
+.showcase {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.showcase h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.showcase p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #00d4ff;
+    color: #1e3c72;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #00b8e6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+
+/* team.html */
+.about {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 4rem 5%;
+    margin: 2rem 5%;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #00d4ff;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #00d4ff;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    margin-bottom: 0.5rem;
+    color: #00d4ff;
+}
+
+.team-card p {
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+}
+
+/* about.html  */
+.page-header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.about-content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #00d4ff;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+.mv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+.demo{
+    list-style-position: inside; 
+    color: #e0e0e0; 
+    margin-left: 1.5rem; 
+    margin-top: 1rem;
+}
+.mv-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+}
+
+.mv-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.mv-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #00d4ff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mv-card p {
+    color: #e0e0e0;
+    line-height: 1.8;
+}
+
+/* Skills Section */
+.skills-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #00d4ff;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.skill-item:hover {
+    background: rgba(0, 212, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.skill-item h4 {
+    color: #00d4ff;
+    margin-bottom: 0.5rem;
+}
+
+.skill-item p {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+
+
+/* index.html body content media queries*/
+@media (max-width: 768px) {
+    .showcase h1 {
+        font-size: 2rem;
+    }
+
+    .showcase p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 769px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* team.html media queries */
+@media (min-width: 1400px) {
+    .about {
+        margin: auto 240px;
+    }
+
+}
+
+/* about.html media queries */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-content,
+    .skills-section {
+        padding: 2rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+}
+
